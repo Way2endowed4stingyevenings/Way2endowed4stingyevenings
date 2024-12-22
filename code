@@ -1,0 +1,111 @@
+from fpdf import FPDF
+
+# Initialize PDF
+pdf = FPDF()
+pdf.set_auto_page_break(auto=True, margin=15)
+pdf.add_page()
+pdf.set_font("Arial", size=12)
+
+# Title
+pdf.set_font("Arial", style="B", size=16)
+pdf.cell(0, 10, "Palladial Universe Core Rulebook: Expanded Structure", ln=True, align="C")
+pdf.ln(10)
+
+# Introduction Section
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Introduction: A Legacy of Imagination", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "The Palladial Universe is a vast galaxy shaped by conflict, ambition, and discovery, rooted in the imaginative "
+    "tradition of science fiction visionaries. Drawing inspiration from timeless themes of unity, exploration, "
+    "and the resilience of the human spirit, the Palladial Universe builds a galaxy where psionics replace artificial "
+    "intelligence, and feudal politics intersect with the mysteries of the Void."
+))
+pdf.ln(5)
+
+# Chapter One
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Chapter One: The Rise of the Palladial Universe", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- Timeline of Key Eras:\n"
+    "  * Steampunk Age of Conquest: Industrial innovation and collapse.\n"
+    "  * Cyberpunk Era: Corporate control, psionic experimentation, and the ban on AI.\n"
+    "  * First Age of Expansion: Galactic colonization and the rise of the Twelve Great Houses.\n"
+    "  * Second Age of Expansion: Fragmentation, Void Zones, and the Palladial Emperor’s return.\n"
+    "- Twelve Great Houses: Expanded lore and roleplay hooks for each House, including their ethos, culture, "
+    "and mechanical bonuses."
+))
+pdf.ln(5)
+
+# Chapter Two
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Chapter Two: Character Creation", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- Step-by-Step Guide:\n"
+    "  1. Origins: Choose species (e.g., Palladians, Voidborn, Synthminds), lineage, and birthplace.\n"
+    "  2. Attributes: Distribute points across 10 attributes (e.g., Strength, Intelligence, Willpower).\n"
+    "  3. Skills: Select 6 Core Skills and 3 Advanced Skills. Expanded lists include specialized options for combat, "
+    "exploration, and psionics.\n"
+    "  4. Career Paths: Pick an occupation (e.g., Void Navigator, Beacon Guardian) with enhanced benefits and constraints.\n"
+    "  5. House Assignment: Roll for alignment with a Great or Minor House, or remain independent."
+))
+pdf.ln(5)
+
+# Chapter Three
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Chapter Three: Core Mechanics", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- D100 Rolling System:\n"
+    "  * Success: Roll ≤ Target Number (TN = Skill + Attribute + Modifiers).\n"
+    "  * Critical Success (1–5): Amplified effects.\n"
+    "  * Critical Failure (96–100): Severe consequences.\n"
+    "- Psionic Mechanics:\n"
+    "  * Use the Psionic Pool to activate abilities and interact with the Tapestry.\n"
+    "  * Resonance Boosts and Feedback enhance or disrupt gameplay.\n"
+    "- Combat and Exploration Rules:\n"
+    "  * Turn-based actions, Initiative rolls, damage types (physical, psionic, environmental).\n"
+    "  * Specialized mechanics for navigating Void Zones and environmental challenges."
+))
+pdf.ln(5)
+
+# Chapter Four
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Chapter Four: Campaign and Adventure Structure", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- Acts and Chapters:\n"
+    "  * Campaigns are divided into 3–5 Acts, with Chapters focusing on specific goals or branching paths.\n"
+    "- Faction Influence Mechanics:\n"
+    "  * Players' actions dynamically affect their relationships with factions, unlocking resources or escalating conflicts."
+))
+pdf.ln(5)
+
+# Chapter Five
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Chapter Five: Factions, Guilds, and the Void", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- Key Factions:\n"
+    "  * The Watchers Guild, Proletariat Guild, Cosmic Sisterhood, and others.\n"
+    "- Void Navigation:\n"
+    "  * Mechanics for traversing Void Zones, including hazards, anomalies, and psionic disturbances."
+))
+pdf.ln(5)
+
+# Appendix
+pdf.set_font("Arial", style="B", size=14)
+pdf.cell(0, 10, "Appendix", ln=True)
+pdf.set_font("Arial", size=12)
+pdf.multi_cell(0, 10, (
+    "- Advanced skills and abilities.\n"
+    "- Sample characters for inspiration.\n"
+    "- Campaign hooks for one-shots or full campaigns."
+))
+
+# Save PDF
+output_path = "/mnt/data/Palladial_Universe_Core_Rulebook_Expanded.pdf"
+pdf.output(output_path)
+output_path
